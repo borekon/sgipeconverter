@@ -6,6 +6,7 @@ import os
 
 from xlrd import open_workbook
 from xlutils.copy import copy
+import shutil
 
 # Retrieve current working directory (`cwd`)
 cwd = os.getcwd()
@@ -97,6 +98,9 @@ def seleccion(archivo):
         if ron[1].value == "160270":
             setOutCell(hojan, 2, j, ncto)
     wb.save('Alta_masiva_hojas_usua.xls')
+    abierto.release_resources()
+    os.remove(archivo)
+    shutil.copy2('Alta_masiva_hojas_usua.xls', archivo)
     return 0;
 
 print ("SGIPE converter version" + version)
