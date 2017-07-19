@@ -11,7 +11,7 @@ import shutil
 # Retrieve current working directory (`cwd`)
 cwd = os.getcwd()
 cwd
-version = "0.1 alpha"
+version = "0.2 alpha"
 # Change directory
 # os.chdir("/path/to/your/folder")
 
@@ -110,11 +110,11 @@ for i in files:
         archivos.append(i)
 if archivos.__len__() == 1:
     respuesta = str(raw_input("Es %s el archivo a editar? (s/n)\n" % archivos[0]))
-    if respuesta == "n":
+    if respuesta == "n" or respuesta == "N":
         list(files)
         respuesta = int(raw_input("Elige el archivo\n"))
         seleccion(files[respuesta])
-    elif respuesta == "s" or respuesta == "y":
+    elif respuesta == "s" or respuesta == "S":
         seleccion(archivos[0])
     else:
         print "Respuesta inválida"
