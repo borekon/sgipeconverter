@@ -75,7 +75,7 @@ def seleccion(archivo):
         #valor = xl_sheet.cell(j, 2)
         #print ('Tarea: [%s] Valor: %s' % (tarea, valor))
         ron = xl_sheet.row(j)
-        if zz == "s":
+        if zz == "s" or zz == "S":
             if ron[1].value == '160253':
                 setOutCell(hojan, 2, j, 1)
             if ron[1].value == "160245":
@@ -90,7 +90,7 @@ def seleccion(archivo):
             setOutCell(hojan, 2, j, neq)
         if ron[1].value == "160024":
             setOutCell(hojan, 2, j, 1)
-        if vlc == "s":
+        if vlc == "s" or vlc == "S":
             if ron[1].value == "740314":
                 setOutCell(hojan, 2, j, 1)
             if ron[1].value == "720488":
