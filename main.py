@@ -103,7 +103,7 @@ def seleccion(archivo):
     shutil.copy2('Alta_masiva_hojas_usua.xls', archivo)
     return 0;
 
-print ("SGIPE converter version" + version)
+print ("SGIPE converter version " + version + " by borekon")
 for i in files:
     a = i.find('xls')
     if a > 0 and i.__len__() == 12:
