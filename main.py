@@ -11,7 +11,7 @@ import shutil
 # Retrieve current working directory (`cwd`)
 cwd = os.getcwd()
 cwd
-version = "0.2 alpha"
+version = "0.3 alpha"
 # Change directory
 # os.chdir("/path/to/your/folder")
 
@@ -103,10 +103,12 @@ def seleccion(archivo):
     shutil.copy2('Alta_masiva_hojas_usua.xls', archivo)
     return 0;
 
-print ("SGIPE converter version" + version)
+print ("SGIPE converter version " + version + " by borekon")
 for i in files:
     a = i.find('xls')
     if a > 0 and i.__len__() == 12:
+        archivos.append(i)
+    elif a > 0:
         archivos.append(i)
 if archivos.__len__() == 1:
     respuesta = str(raw_input("Es %s el archivo a editar? (s/n)\n" % archivos[0]))
