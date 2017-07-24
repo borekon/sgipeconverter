@@ -8,6 +8,7 @@ from xlrd import open_workbook
 from xlutils.copy import copy
 import shutil
 
+
 # Retrieve current working directory (`cwd`)
 cwd = os.getcwd()
 cwd
@@ -75,7 +76,7 @@ def seleccion(archivo):
         #valor = xl_sheet.cell(j, 2)
         #print ('Tarea: [%s] Valor: %s' % (tarea, valor))
         ron = xl_sheet.row(j)
-        if zz == "s" or zz == "S":
+        if zz == "s":
             if ron[1].value == '160253':
                 setOutCell(hojan, 2, j, 1)
             if ron[1].value == "160245":
@@ -90,7 +91,7 @@ def seleccion(archivo):
             setOutCell(hojan, 2, j, neq)
         if ron[1].value == "160024":
             setOutCell(hojan, 2, j, 1)
-        if vlc == "s" or vlc == "S":
+        if vlc == "s":
             if ron[1].value == "740314":
                 setOutCell(hojan, 2, j, 1)
             if ron[1].value == "720488":
@@ -98,12 +99,13 @@ def seleccion(archivo):
         if ron[1].value == "160270":
             setOutCell(hojan, 2, j, ncto)
     wb.save('Alta_masiva_hojas_usua.xls')
+    # hay que cerrar el archivo antes
     abierto.release_resources()
     os.remove(archivo)
     shutil.copy2('Alta_masiva_hojas_usua.xls', archivo)
     return 0;
 
-print ("SGIPE converter version " + version + " by borekon")
+print "SGIPE converter version " + version + " by borekon\n"
 for i in files:
     a = i.find('xls')
     if a > 0 and i.__len__() == 12:
